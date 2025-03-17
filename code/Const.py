@@ -4,6 +4,9 @@ import pygame
 C_RED = (255, 0, 0)
 C_YELLOW = (255, 255, 0)
 C_WHITE = (255, 255, 255)
+C_ORANGE = (255, 165, 0)
+C_PURPLE = (128, 0, 128)
+C_GREEN = (0, 255, 0)
 
 # E
 EVENT_ENEMY = pygame.USEREVENT + 1
@@ -79,7 +82,7 @@ PLAYER_KEYS = {
 }
 
 # S
-SPAWN_TIME = 3000
+SPAWN_TIME = 2000
 
 # T
 TIMEOUT_LEVEL = 15000

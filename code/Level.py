@@ -7,7 +7,7 @@ import pygame.display
 from pygame import Surface, Rect
 from pygame.font import Font
 
-from code.Const import C_WHITE, WIN_HEIGHT, EVENT_ENEMY, SPAWN_TIME, TIMEOUT_LEVEL
+from code.Const import C_WHITE, WIN_HEIGHT, EVENT_ENEMY, SPAWN_TIME, TIMEOUT_LEVEL, C_ORANGE, C_PURPLE, C_YELLOW
 from code.Entity import Entity
 from code.EntityFactory import EntityFactory
 from code.EntityMediator import EntityMediator
@@ -56,7 +56,7 @@ class Level:
                     self.level_text(22, f'Score: {ent.score}', C_WHITE, (10, 30))  # Exibe o score
 
             if self.timeout <= 0:
-                self.level_text(22, "Tempo esgotado!", C_WHITE, (10, WIN_HEIGHT - 50))
+                self.level_text(50, "Time Out!", C_PURPLE, (10, WIN_HEIGHT - 50))
                 pygame.display.flip()
                 pygame.time.delay(2000)  # Exibe a mensagem por 2 segundos
                 self.game_over()  # Chama a função para encerrar o jogo ou reiniciar
@@ -68,10 +68,9 @@ class Level:
             EntityMediator.verify_health(entity_list=self.entity_list)
 
     def game_over(self):
-        """ Função para exibir a tela de fim de jogo ou reiniciar o nível. """
-        self.level_text(36, "Fim de Jogo!", C_WHITE, (WIN_HEIGHT // 2 - 100, WIN_HEIGHT // 2 - 20))
+        self.level_text(110, "GAME OVER", C_YELLOW, (WIN_HEIGHT // 2 - 100, WIN_HEIGHT // 2 - 20))
         pygame.display.flip()
-        pygame.time.delay(3000)  # Exibe a mensagem de fim de jogo por 3 segundos.
+        pygame.time.delay(6000)  # Exibe a mensagem de fim de jogo por 6 segundos.
         pygame.quit()
         sys.exit()  # Finaliza o jogo completamente.
 
